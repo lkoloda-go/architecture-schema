@@ -1,0 +1,21 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+
+package "Module FoodMenu" {
+  [FoodMenuController]
+  [FoodMenuModel]
+  [FoodMenuRoute]
+}
+
+
+database "MySql" {
+  folder "FoodMenu" {
+    [FoodMenuDBModel]
+  }
+
+}
+FoodMenuRoute->FoodMenuController
+FoodMenuController->FoodMenuModel
+FoodMenuModel->FoodMenuDBModel
+@enduml
